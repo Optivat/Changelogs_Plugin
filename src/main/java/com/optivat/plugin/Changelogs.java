@@ -30,11 +30,7 @@ public final class Changelogs extends JavaPlugin {
         Bukkit.getPluginManager().registerEvents(new ChangelogInventoryEvent(this), this);
         try {
             getDataFolder().mkdir();
-            if(version1_18()) {
-                file = new File(getDataFolder(), "changelogs_1_18.json");
-            } else {
-                file = new File(getDataFolder(), "changelogs.json");
-            }
+            file = new File(getDataFolder(), "changelogs.json");
             fileCreation();
         } catch (IOException e) {
             if(version1_18()) {

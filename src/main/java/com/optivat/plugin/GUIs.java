@@ -93,7 +93,11 @@ public class GUIs {
                 if (jsonElement.isJsonObject()) {
                     Changelog changelog = gson.fromJson(jsonElement, Changelog.class);
                     if(changelog.getChangelogPage() == page) {
-                        ChangelogCommand.setItem(changelog.getItemStack(), changelog.getDisplayName(), changelog.getLore(), position, inv);
+                        if(Changelogs.version1_18()) {
+                            ChangelogCommand.setItem(changelog.getItemStack1_18(), changelog.getDisplayName(), changelog.getLore(), position, inv);
+                        } else {
+                            ChangelogCommand.setItem(changelog.getItemStack(), changelog.getDisplayName(), changelog.getLore(), position, inv);
+                        }
                         if(position == 16 || position == 25 || position == 34 || position == 43) {
                             position+=3;
                         } else {
