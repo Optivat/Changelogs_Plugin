@@ -1,0 +1,10 @@
+name: Changelogs
+version: '${project.version}'
+main: com.optivat.plugin.Changelogs
+api-version: 1.18
+authors: [ Optivat ]
+description: Creates changelogs and saves changelogs.
+commands:
+  changelog:
+    description: Opens the changelog menu
+    permission: changelogs.menu
